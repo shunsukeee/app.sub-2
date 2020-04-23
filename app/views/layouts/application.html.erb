@@ -4,10 +4,10 @@
     <%= csrf_meta_tags %>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>Bookers
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meshiterro</title>
+    <title></title>
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
   </head> 
@@ -34,20 +34,20 @@
                 <span>Bookers</span>
               <% if user_signed_in? %>
                 <li class="">
-                  <%= link_to 'Home', user_path %>
+                  <%= link_to 'Home', user_path(current_user) %>
                 </li>
                 <li class="">
-                  <%= link_to 'Users', "#" %>
+                  <%= link_to 'Users', users_path %>
                 </li>
                 <li class="">
-                  <%= link_to 'Books', "#" %>
+                  <%= link_to 'Books', books_path %>
                 </li>
                 <li class="">
                   <%= link_to "logout", destroy_user_session_path, method: :delete %>
                 </li>
               <% else %>
                 <li class="">
-                  <%= link_to 'Home', user_path %>
+                  <%= link_to 'Home', "#" %>
                 </li>
                 <li class="">
                   <%= link_to 'About', "#" %>

@@ -1,5 +1,5 @@
 <h2>User info</h2>
-
+<div><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size:'100x100',class: "img-circle pull-left profile-img" %></div>
 <tbody>
 	<th>
 		<tr>name</tr>
@@ -7,9 +7,10 @@
 	</th>
 	<th>
 		<tr>introduction</tr>
-		<tr></tr>
+		<tr><%= @user.introduction %></tr>
 	</th>
 </tbody>
+<div><%= link_to 'edit', edit_user_path(current_user) %></div>
 
 <h2>New book</h2>
 <%= form_for(@book2) do |f| %>
@@ -29,3 +30,5 @@
 <td>
 <%= link_to "Edit", edit_book_path %>
 </td>
+
+<%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %>

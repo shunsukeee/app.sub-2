@@ -1,0 +1,19 @@
+<h2>User info</h2>
+<div><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size:'100x100',class: "img-circle pull-left profile-img" %></div>
+<%= form_for(@user) do |f| %>
+    <div class="form-group has-icon">
+        <label class="control-label sr-only" for="inputEmail">Name</label>
+        <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"名前"%>
+        <span class="fa fa-user form-control-icon" aria-hidden="true"></span>
+    </div>
+    <div class="form-group has-icon">
+    <label class="control-label sr-only" for="inputEmail">Image</label>
+    <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+    </div>
+    <div>
+    	<label>Introduction</label>
+    	<%= f.text_area :introduction %>
+    </div>
+    <%= f.submit "Update User", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+
+<% end %>
