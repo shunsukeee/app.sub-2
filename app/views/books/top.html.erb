@@ -1,12 +1,33 @@
-<h1>welcome to Bookers !!</h1>
-<p>In Bookers,<br>
-   you can share and exchange your opinions , inpressions , and emotions<br>
-   about various books!</p>
 
-                <li class="">
-                  <%= link_to "login", new_user_session_path %>
-                </li>
-
-                <li class="">
-                  <%= link_to "sign up", new_user_registration_path %>
-                </li>
+<div class="container">
+	<p class="motice"></p>
+	<div class="row">
+		<div class="top-message col-md-offset-3 col-md-6">
+			<h1>welcome to
+				<span class="glyphicon glyphicon-book">
+					<strong>Bookers</strong> !!
+				</span>
+			</h1>
+			<p>In
+				<span class="glyphicon glyphicon-book"></span>
+				<strong>Bookers</strong>,
+			</p>
+			<p>you can share and exchange your opinions , inpressions , and emotions
+			</p>
+			<p>about various books!
+			</p>
+			<div class="btn-wrapper">
+				
+					<p style="background-color: #5bc0de;">
+						<%= link_to "login", new_user_session_path %>
+					</p>
+				
+				
+					<p style="background-color: #5cb85c;">
+						<%= link_to "log out", new_user_registration_path %>
+					</p>
+				
+			</div>
+		</div>
+	</div>
+</div>
