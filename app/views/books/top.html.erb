@@ -1,3 +1,5 @@
+
+
 <% if flash[:notice] %>
           <%= flash[:notice] %>
     <% end %>
@@ -19,16 +21,12 @@
 			<p>about various books!
 			</p>
 			<div class="btn-wrapper">
-				
-					<p style="background-color: #5bc0de;">
-						<%= link_to "Log in", new_user_session_path %>
-					</p>
-				
-				
-					<p style="background-color: #5cb85c;">
-						<%= link_to "Sign Up", new_user_registration_path %>
-					</p>
-				
+				<div class="row">
+						<%= link_to "Log in", new_user_session_path, class: "btn btn-info col-xs-10 col-xs-offset sign_in" %>
+				</div>
+				<div class="row">
+						<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success col-xs-10 col-xs-offset sign_in" %>
+				</div>
 			</div>
 		</div>
 	</div>
