@@ -1,13 +1,14 @@
-<% if flash[:notice] %>
-			  <p><%= flash[:notice] %></p>
-			<% end %>
+
 
 <div class="container">
+  <% if flash[:notice] %>
+      <p><%= flash[:notice] %></p>
+    <% end %>
   <div class="row">
     <div class="col-xs-3">
       <h2>User info</h2>
       <%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size:'100x100' %>
-      <table class="table table-striped">
+      <table class="table">
       <tbody>
         <tr></tr>
         <tr>
@@ -20,20 +21,16 @@
         </tr>
       </tbody>
       </table>
-      <div><%= link_to edit_user_path(current_user) do%><i class="glyphicon glyphicon-wrench"></i><% end %></div>
+      <div class="row"><%= link_to edit_user_path(current_user) do%><i class="col-xs-12 btn btn-default glyphicon glyphicon-wrench"></i><% end %></div>
 
       <h2>New book</h2>
       <%= form_for(@book) do |f| %>
-      <div>
           <label>Title</label>
-          <div><%= f.text_field :title %></div>
-      </div>
-      <div>
+          <div class="field row"><%= f.text_field :title, class: "col-xs-12" %></div>
           <label>Opinion</label>
-          <div><%= f.text_area :body %></div>
-      </div>
+          <div class="field row"><%= f.text_area :body, class: "col-xs-12" %></div>
 
-          <div><%= f.submit 'Create Book' %></div>
+          <div class="actions row"><%= f.submit 'Create Book', class: "btn btn-primary col-xs-12" %></div>
 
       <% end %>
       </div>
@@ -52,7 +49,9 @@
 			<tbody>
 				<% @books.each do |book| %>
 				<tr>
-					<td><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size:'40x40' %></td>
+					<td><%= link_to user_path(book.user_id) do %>
+      <%= attachment_image_tag book.user, :profile_image, fallback: "no_image.jpg", size:'40x40' %>
+      <% end %></td>
 					<td><%= link_to book.title, book_path(book.id) %></td>
 					<td><%= book.body %></td>
 				</tr>

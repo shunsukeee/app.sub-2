@@ -38,3 +38,16 @@ a:visited {
 .col-xs-offset-1 {
     margin-left: 8.33333333%;
 }
+
+div.field,
+div.actions {
+    margin-bottom: 10px;
+}
+
+#error_explanation {
+    color: red;
+}
+
+#notice {
+    color: green;
+}
