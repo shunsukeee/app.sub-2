@@ -2,7 +2,10 @@
 
 <div class="container">
   <% if flash[:notice] %>
-      <p><%= flash[:notice] %></p>
+      <p class="flash"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:userup] %>
+      <p><%= flash[:userup] %></p>
     <% end %>
   <div class="row">
     <div class="col-xs-3">
